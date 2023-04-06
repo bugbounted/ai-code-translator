@@ -139,10 +139,6 @@ export default function Home() {
           <div className="text-4xl font-bold">AI Code Translator</div>
         </div>
 
-        <div className="mt-6 text-center text-sm">
-          <APIKeyInput apiKey={apiKey} onChange={handleApiKeyChange} />
-        </div>
-
         <div className="mt-2 flex items-center space-x-2">
           <ModelSelect model={model} onChange={(value) => setModel(value)} />
 
