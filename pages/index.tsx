@@ -20,10 +20,6 @@ export default function Home() {
   const handleTranslate = async () => {
     const maxCodeLength = model === 'gpt-3.5-turbo' ? 6000 : 12000;
 
-    if (!apiKey) {
-      alert('Please enter an API key.');
-      return;
-    }
 
     if (inputLanguage === outputLanguage) {
       alert('Please select different languages.');
