@@ -22,18 +22,18 @@ export default function Home() {
 
 
     if (inputLanguage === outputLanguage) {
-      alert('Please select different languages.');
+      alert('لطفا زبان های مختلف را انتخاب کنید.');
       return;
     }
 
     if (!inputCode) {
-      alert('Please enter some code.');
+      alert('لطفا یک کد وارد کنید');
       return;
     }
 
     if (inputCode.length > maxCodeLength) {
       alert(
-        `Please enter code less than ${maxCodeLength} characters. You are currently at ${inputCode.length} characters.`,
+        `لطفا کد کمتر از ${maxCodeLength} کاراکتر. شما در حال حاضر در ${inputCode.length} کاراکتر.`,
       );
       return;
     }
@@ -62,7 +62,7 @@ export default function Home() {
 
     if (!response.ok) {
       setLoading(false);
-      alert('Something went wrong.');
+      alert('مشکلی پیش آمده است.');
       return;
     }
 
@@ -70,7 +70,7 @@ export default function Home() {
 
     if (!data) {
       setLoading(false);
-      alert('Something went wrong.');
+      alert('مشکلی پیش آمده است.');
       return;
     }
 
@@ -126,10 +126,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Code Translator</title>
+        <title>مُبدّل | اولین سامانه تبدیل کد های زبان های برنامه نویسی به یکدیگر</title>
         <meta
           name="description"
-          content="Use AI to translate code from one language to another."
+          content="از هوش مصنوعی برای ترجمه کد از یک زبان به زبان دیگر استفاده کنید."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -147,21 +147,21 @@ export default function Home() {
             onClick={() => handleTranslate()}
             disabled={loading}
           >
-            {loading ? 'Translating...' : 'Translate'}
+            {loading ? 'در حال بازنویسی ...' : 'تبدیل'}
           </button>
         </div>
 
         <div className="mt-2 text-center text-xs">
           {loading
-            ? 'Translating...'
+            ? 'در حال بازنویسی ...'
             : hasTranslated
-            ? 'Output copied to clipboard!'
-            : 'Enter some code and click "Translate"'}
+            ? 'خروجی در کلیپ بورد کپی شد!'
+            : 'کدی را وارد کنید و روی "تبدیل" کلیک کنید'}
         </div>
 
         <div className="mt-6 flex w-full max-w-[1200px] flex-col justify-between sm:flex-row sm:space-x-4">
           <div className="h-100 flex flex-col justify-center space-y-2 sm:w-2/4">
-            <div className="text-center text-xl font-bold">Input</div>
+            <div className="text-center text-xl font-bold">ورودی</div>
 
             <LanguageSelect
               language={inputLanguage}
@@ -194,7 +194,7 @@ export default function Home() {
             )}
           </div>
           <div className="mt-8 flex h-full flex-col justify-center space-y-2 sm:mt-0 sm:w-2/4">
-            <div className="text-center text-xl font-bold">Output</div>
+            <div className="text-center text-xl font-bold">خروجی</div>
 
             <LanguageSelect
               language={outputLanguage}
